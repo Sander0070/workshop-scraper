@@ -73,8 +73,8 @@ from datetime import datetime
 # ✅ Your Supabase credentials
 import os
 
-SUPABASE_URL = os.environ["https://kljkpojeelgtqthvqsia.supabase.co"]
-SUPABASE_KEY = os.environ["sb_publishable_BaKGlZzewb2u2E3fbk9YsQ_20fDZdpJ"]
+SUPABASE_URL = os.environ["SUPABASE_URL"]
+SUPABASE_KEY = os.environ["SUPABASE_KEY"]
 
 # Create Supabase client
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
