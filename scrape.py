@@ -31,7 +31,7 @@ for job in jobs:
         "location": job.get("jobGeo"),
         "job_type": job.get("jobType"),
         "publication_date": job.get("pubDate"),
-        "job_url": job.get("url")
+        "job_url": job.get("url"),
         "scraped_at": scrape_time,
     })
 
