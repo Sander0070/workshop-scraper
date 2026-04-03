@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1T7D1qDwj_Si11Y6t35rDO9CzhmCw7wgW
 """
 
-!pip -q install requests pandas
-
 
 from datetime import datetime
 import requests
@@ -38,7 +36,7 @@ for job in jobs:
     })
 
 df = pd.DataFrame(rows)
-df.head(10)
+
 
 import os
 
@@ -57,25 +55,26 @@ print(f"Appended {len(df)} rows — total file now has historical data")
 print(f"Columns: {list(df.columns)}")
 print(f"Data types:\n{df.dtypes}")
 print(f"\nFirst 3 rows:")
-df.head(3)
+
 
 # Final check
 print(f"Rows: {len(df)}")
 print(f"Columns: {list(df.columns)}")
 print(f"Data types:\n{df.dtypes}")
 print(f"\nSample:")
-df.head()
+
 
 # Install Supabase client
-!pip -q install supabase
 
 # Imports
 from supabase import create_client
 from datetime import datetime
 
 # ✅ Your Supabase credentials
-SUPABASE_URL = "https://kljkpojeelgtqthvqsia.supabase.co"
-SUPABASE_KEY = "sb_publishable_BaKGlZzewb2u2E3fbk9YsQ_20fDZdpJ"
+import os
+
+SUPABASE_URL = os.environ["https://kljkpojeelgtqthvqsia.supabase.co"]
+SUPABASE_KEY = os.environ["sb_publishable_BaKGlZzewb2u2E3fbk9YsQ_20fDZdpJ"]
 
 # Create Supabase client
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
